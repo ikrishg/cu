@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobbit</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: rgb(125, 186, 106);
+      padding: 2rem 1rem;
+      color: whitesmoke;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-bottom: 1px solid white;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: "PP Editorial New", serif;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ol,
+    ul {
+      list-style-type: lower-greek;
+      padding-left: 2rem;
+      list-style: inside;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    .creator-link {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    form {
+      margin: 1rem 0;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+
+    .carousel {
+      margin: 1rem 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 1rem;
+      width: max-content;
+      animation: carousel-scroll 20s linear infinite;
+    }
+
+    .carousel-track img {
+      flex: 0 0 auto;
+    }
+
+    @keyframes carousel-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 0.5rem));
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .carousel-track {
+        animation: none;
+      }
+    }
+
+    marquee {
+      font-family: "PP Editorial New", serif;
+      font-size: 20rem;
+      rotate: -45deg;
+      position: fixed;
+      left: 50%;
+      top: 0%;
+      transform: translate(-50%, -50%);
+      width: hypot(100vw, 100vh);
+      z-index: -1;
+      opacity: 0.1;
+      overflow: visible;
+    }
+
+    nav div {
+      flex-grow: 1;
+    }
+
+    .auth-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .account-form {
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #login-form {
+      background: linear-gradient(160deg, rgba(0, 0, 0, 0.22), rgba(40, 90, 30, 0.35));
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      padding: 1.25rem 1.35rem 1.4rem;
+    }
+
+    #login-form h4 {
+      font-family: "PP Editorial New", serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.03em;
+      margin-bottom: 1.15rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .account-form h4 {
+      margin: 0 0 1rem;
+      font-size: 1.15rem;
+    }
+
+    .account-form label {
+      display: block;
+      margin: 0.65rem 0 0.25rem;
+      font-size: 0.92rem;
+    }
+
+    .account-form input,
+    .account-form textarea,
+    .account-form select {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 0.4rem;
+      background: rgba(255, 255, 255, 0.12);
+      color: inherit;
+      font: inherit;
+    }
+
+    .account-form input:focus,
+    .account-form textarea:focus,
+    .account-form select:focus {
+      outline: none;
+      border-color: #e8ffe0;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .account-form textarea {
+      resize: vertical;
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+
+    button[type="submit"],
+    button[type="reset"] {
+      cursor: pointer;
+      font: inherit;
+      font-weight: 600;
+      padding: 0.55rem 1.15rem;
+      border-radius: 0.4rem;
+      border: 1px solid transparent;
+    }
+
+    button[type="submit"] {
+      background-color: #f5f5f5;
+      color: #1a3d12;
+      border-color: #f5f5f5;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #ffffff;
+    }
+
+    button[type="reset"] {
+      background-color: transparent;
+      color: #f5f5f5;
+      border-color: rgba(255, 255, 255, 0.55);
+    }
+
+    button[type="reset"]:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-color: #ffffff;
+    }
+
+    #login-form button[type="submit"] {
+      background-color: hsl(95, 55%, 88%);
+      color: hsl(100, 40%, 16%);
+      border-color: hsl(95, 55%, 88%);
+      min-width: 6.5rem;
+    }
+
+    #login-form button[type="submit"]:hover {
+      background-color: #ffffff;
+    }
+
+    .form-error {
+      min-height: 1.25rem;
+      margin: 0.35rem 0 0;
+      color: #ffd6d6;
+      font-size: 0.85rem;
+    }
+
+    .form-status {
+      margin-top: 0.75rem;
+      min-height: 1.25rem;
+      font-weight: 600;
+    }
+
+    .form-status.success {
+      color: #d9ffd4;
+    }
+
+    .form-status.error {
+      color: #ffd6d6;
+    }
+
+    input.invalid,
+    textarea.invalid,
+    select.invalid {
+      border-color: #ff8a8a;
+      background-color: rgba(255, 80, 80, 0.18);
+    }
+
+    input.valid {
+      border-color: #9dffb0;
+    }
+
+    .stats-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .stats-log {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+
+    .stats-log li {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .stats-result {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .stats-result li {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .stats-result .construct {
+      display: block;
+      font-size: 0.78rem;
+      opacity: 0.75;
+      margin-bottom: 0.2rem;
+    }
+
+    .empty-hint {
+      opacity: 0.8;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 720px) {
+      .stats-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="site-header">
+    <h1 style="text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);">Hobbit</h1>
+  </header>
+
+  <nav id="site-nav">
+    <div></div>
+    <a href="#modules">Modules</a>
+    <a href="#idea">Idea</a>
+    <a href="#plan-of-action">Plan of Action</a>
+    <a href="#about-the-creator">About the Creator</a>
+    <a href="#account">Account</a>
+    <a href="#activity-stats">Activity Stats</a>
+    <a href="#leave-a-message">Contact</a>
+  </nav>
+
+  <marquee>KRISH GUPTA</marquee>
+
+  <main id="site-content">
+    <h3 id="idea">Idea</h3>
+    <p class="section-text">Hobbit is a social media platform designed to extinguish larpers in the age of AI. This
+      platform focuses on consumption of authentic content. The most important way for a human being to enlight the
+      flames
+      that burn within their passionate hearts is through consumption of media, culture and engagement with the real
+      world.</p>
+
+    <h3 id="modules">Modules</h3>
+    <div class="modules-grid">
+      <div class="module-card border-solid">Feed</div>
+      <div class="module-card border-dashed">Profile Page</div>
+      <div class="module-card border-dotted">Activity Overview Page</div>
+      <div class="module-card border-double">Activity Statistics</div>
+      <div class="module-card border-ridge">Activity Type Display Page</div>
+      <div class="module-card border-solid">Activity Blend Page</div>
+      <div class="module-card border-dashed">Following Feed</div>
+      <div class="module-card border-dotted">Chats</div>
+    </div>
+
+    <h3 id="plan-of-action">Plan of Action</h3>
+    <p class="section-text">The plan of action for Hobbit involves several key steps:</p>
+    <ul>
+      <li>A platform where you log the movies, tv shows, books, music, and other media you consume.</li>
+      <li>A platform where you can see what your friends are consuming and what they think about it.</li>
+      <li>A platform where you can post about your happenings in the real world (e.g., going to a concert, hiking,
+        traveling, etc.) and see what your friends are doing in the real world.</li>
+    </ul>
+
+    <h3 id="about-the-creator">About the Creator</h3>
+    <p class="section-text">Hi, I'm Krish Gupta. I am an introvert. I write poetry. I have a website at <a
+        href="https://krishg.com" target="_blank" class="creator-link">krishg.com</a>.</p>
+    <div class="carousel" aria-label="Photo gallery">
+      <div class="carousel-track">
+        <img src="./image1.jpg" alt="Gallery image 1">
+        <img src="./image2.jpg" alt="Gallery image 2">
+        <img src="./image3.jpg" alt="Gallery image 3">
+        <img src="./image4.jpg" alt="Gallery image 4">
+        <img src="./image5.jpg" alt="Gallery image 5">
+        <img src="./image1.jpg" alt="">
+        <img src="./image2.jpg" alt="">
+        <img src="./image3.jpg" alt="">
+        <img src="./image4.jpg" alt="">
+        <img src="./image5.jpg" alt="">
+      </div>
+    </div>
+
+    <h3 id="account">Account</h3>
+    <p class="section-text">Sign in or create an account to start logging what you watch, read, and do.</p>
+    <div class="auth-grid">
+      <form id="login-form" class="account-form" novalidate>
+        <h4 id="login">Login</h4>
+        <label for="login-email">Email</label>
+        <input id="login-email" name="email" type="email" autocomplete="email" />
+        <p id="login-email-error" class="form-error"></p>
+
+        <label for="login-password">Password</label>
+        <input id="login-password" name="password" type="password" autocomplete="current-password" />
+        <p id="login-password-error" class="form-error"></p>
+
+        <div class="form-actions">
+          <button type="submit">Login</button>
+          <button type="reset">Reset</button>
+        </div>
+        <p id="login-status" class="form-status"></p>
+      </form>
+
+      <form id="register-form" class="account-form" novalidate>
+        <h4 id="register">Registration</h4>
+        <label for="reg-name">Name</label>
+        <input id="reg-name" name="name" type="text" autocomplete="name" />
+        <p id="reg-name-error" class="form-error"></p>
+
+        <label for="reg-email">Email</label>
+        <input id="reg-email" name="email" type="email" autocomplete="email" />
+        <p id="reg-email-error" class="form-error"></p>
+
+        <label for="reg-password">Password</label>
+        <input id="reg-password" name="password" type="password" autocomplete="new-password" />
+        <p id="reg-password-error" class="form-error"></p>
+
+        <label for="reg-confirm">Confirm Password</label>
+        <input id="reg-confirm" name="confirm" type="password" autocomplete="new-password" />
+        <p id="reg-confirm-error" class="form-error"></p>
+
+        <label for="reg-mobile">Mobile No</label>
+        <input id="reg-mobile" name="mobile" type="tel" inputmode="numeric" autocomplete="tel" />
+        <p id="reg-mobile-error" class="form-error"></p>
+
+        <label for="reg-age">Age</label>
+        <input id="reg-age" name="age" type="number" min="1" max="120" />
+        <p id="reg-age-error" class="form-error"></p>
+
+        <div class="form-actions">
+          <button type="submit">Create account</button>
+          <button type="reset">Reset</button>
+        </div>
+        <p id="register-status" class="form-status"></p>
+      </form>
+    </div>
+
+    <h3 id="activity-stats">Activity Statistics</h3>
+    <div class="stats-layout">
+      <form id="stats-form" class="account-form">
+        <h4>Add a log</h4>
+        <label for="stats-type">Type</label>
+        <select id="stats-type" name="type">
+          <option value="movies">Movies</option>
+          <option value="tv">TV Shows</option>
+          <option value="books">Books</option>
+          <option value="music">Music</option>
+          <option value="concert">Concert</option>
+          <option value="hike">Hike</option>
+        </select>
+
+        <label for="stats-title">Title</label>
+        <input id="stats-title" name="title" type="text" />
+
+        <label for="stats-hours">Hours</label>
+        <input id="stats-hours" name="hours" type="number" min="1" max="24" value="1" />
+
+        <div class="form-actions">
+          <button type="submit">Add</button>
+          <button type="button" id="stats-sample">Load sample week</button>
+          <button type="button" id="stats-analyze">Analyze</button>
+          <button type="reset">Clear</button>
+        </div>
+        <p id="stats-status" class="form-status"></p>
+        <ul id="stats-log" class="stats-log"></ul>
+      </form>
+
+      <div class="account-form">
+        <h4>Week report</h4>
+        <p id="stats-empty" class="empty-hint">Add logs or load a sample week, then analyze.</p>
+        <ul id="stats-result" class="stats-result" hidden></ul>
+      </div>
+    </div>
+
+    <h3 id="leave-a-message">Contact</h3>
+    <form id="contact-form" class="account-form" novalidate>
+      <label class="form-field" for="contact-name">Name</label>
+      <input id="contact-name" name="name" type="text" autocomplete="name" />
+      <p id="contact-name-error" class="form-error"></p>
+
+      <label for="contact-email">Email</label>
+      <input id="contact-email" name="email" type="email" autocomplete="email" />
+      <p id="contact-email-error" class="form-error"></p>
+
+      <label for="contact-mobile">Mobile No</label>
+      <input id="contact-mobile" name="mobile" type="tel" inputmode="numeric" autocomplete="tel" />
+      <p id="contact-mobile-error" class="form-error"></p>
+
+      <label>Favorite Media</label>
+      <label><input type="radio" name="favorite-media" value="movies" /> Movies</label>
+      <label><input type="radio" name="favorite-media" value="tv" /> TV Shows</label>
+      <label><input type="radio" name="favorite-media" value="books" /> Books</label>
+      <label><input type="radio" name="favorite-media" value="music" /> Music</label>
+
+      <label><input type="checkbox" name="updates" /> Send me updates</label>
+
+      <label for="mood">Current Mood</label>
+      <select id="mood" name="mood">
+        <option value="">Choose one</option>
+        <option value="happy">Happy</option>
+        <option value="curious">Curious</option>
+        <option value="tired">Tired</option>
+        <option value="hungry">Hungry</option>
+      </select>
+
+      <label for="contact-message">Message</label>
+      <textarea id="contact-message" name="message" rows="4"></textarea>
+      <p id="contact-message-error" class="form-error"></p>
+
+      <div class="form-actions">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+      <p id="contact-status" class="form-status"></p>
+    </form>
+  </main>
+
+  <footer id="site-footer">
+    Copyright © 2026 Krish Gupta. All rights reserved.
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
