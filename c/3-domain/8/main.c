@@ -73,5 +73,7 @@ int main() {
   printf("Average Population : %.2f\n", average);
   printf("Maximum Population : %d\n", maximum);
 
+  printf("Pointer of population: %p\n", population);
+
   return 0;
 }
