@@ -1,0 +1,22 @@
+# C build artifacts
+a.out
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Editor / IDE
+.cursor/
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

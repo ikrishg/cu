@@ -3,11 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects</title>
+  <title>CHRIST University — cu</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f7f9;
+      --card: #fff;
+      --text: #1a1a1a;
+      --muted: #555;
+      --accent: #8b1538;
+      --border: #e2e4e8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121212;
+        --card: #1e1e1e;
+        --text: #f0f0f0;
+        --muted: #aaa;
+        --border: #333;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 1.5rem 1rem 3rem;
+    }
+    .wrap { max-width: 52rem; margin: 0 auto; }
+    h1 { font-size: 1.75rem; margin: 0 0 0.25rem; }
+    .subtitle { color: var(--muted); margin: 0 0 1.5rem; }
+    a { color: var(--accent); }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    h2 { font-size: 1.15rem; margin: 0 0 0.75rem; }
+    ul { margin: 0; padding-left: 1.25rem; }
+    li { margin: 0.35rem 0; }
+    .meta { font-size: 0.9rem; color: var(--muted); margin-top: 1.5rem; }
+    code { font-size: 0.88em; }
+  </style>
 </head>
 <body>
-  1. C
-  2. WAD:
-    3. <a href="./wad/1/">LAB 1</a>
+  <div class="wrap">
+    <h1>CHRIST University Things</h1>
+    <p class="subtitle">Coursework hub — C labs and Web Application Development (WAD)</p>
+
+    <section>
+      <h2>C programming (<code>c/</code>)</h2>
+      <p>Compile with <code>gcc main.c</code> inside each exercise folder. See <a href="https://github.com/ikrishg/cu/blob/main/c/README.md">c/README.md</a> on GitHub for the full list.</p>
+      <ul>
+        <li><a href="./c/2-examples/">2-examples</a> — introductory programs (1–15)</li>
+        <li><a href="./c/3-domain/">3-domain</a> — domain problems (1–2)</li>
+        <li><a href="./c/4-algorithm/sequential/">4-algorithm/sequential</a> — named algorithm sources</li>
+        <li><a href="./c/5-examples/">5-examples</a> — additional examples (1–5)</li>
+        <li><a href="./c/6-cia/">6-cia</a> — CIA lab</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Web Application Development (<code>wad/</code>)</h2>
+      <p>Static pages for labs 1–6; lab 7 is PHP/MySQL (run via Docker locally).</p>
+      <ul>
+        <li><a href="./wad/1/">Lab 1</a></li>
+        <li><a href="./wad/2/">Lab 2</a></li>
+        <li><a href="./wad/3/">Lab 3</a></li>
+        <li><a href="./wad/4/">Lab 4</a></li>
+        <li><a href="./wad/5/">Lab 5</a></li>
+        <li><a href="./wad/6/">Lab 6</a></li>
+        <li><a href="./wad/7/">Lab 7</a> (PHP — not served as static Pages)</li>
+      </ul>
+    </section>
+
+    <p class="meta">
+      Repo: <a href="https://github.com/ikrishg/cu">github.com/ikrishg/cu</a> ·
+      Pages: <a href="https://ikrishg.github.io/cu/">ikrishg.github.io/cu</a>
+    </p>
+  </div>
 </body>
 </html>
