@@ -26,10 +26,11 @@ gcc main.c -o program    # or: gcc main.c && ./a.out
 | Folder | Description |
 |--------|-------------|
 | [`2-examples/`](c/2-examples/) | Introductory programs (folders `1`–`15`) |
-| [`3-domain/`](c/3-domain/) | Domain-style problems (`1`, `2`) |
+| [`3-domain/`](c/3-domain/) | Domain-style problems (`1`–`10`) |
 | [`4-algorithm/sequential/`](c/4-algorithm/sequential/) | Sequential algorithms (named source files, e.g. `1-swap-numbers.c`) |
 | [`5-examples/`](c/5-examples/) | Additional examples (`1`–`5`) |
-| [`6-cia/`](c/6-cia/) | CIA lab (bank account opening scenario) |
+| [`6-cia/`](c/6-cia/) | CIA lab (bank account scenario) |
+| [`7-examples/`](c/7-examples/) | More examples (`2`, `3`) |
 
 See [`c/README.md`](c/README.md) for a full index of C exercises.
 
