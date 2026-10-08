@@ -1,6 +1,6 @@
 # C programming labs
 
-Programs are grouped by course module. Every exercise under `2-examples`, `3-domain`, and `5-examples` uses `main.c` in a numbered subfolder.
+Programs are grouped by course module. Every exercise under `2-examples`, `3-domain`, `5-examples`, and `7-examples` uses `main.c` in a numbered subfolder.
 
 ## `2-examples/` (1–15)
 
@@ -22,12 +22,20 @@ Programs are grouped by course module. Every exercise under `2-examples`, `3-dom
 | 14 | [14/main.c](2-examples/14/main.c) |
 | 15 | [15/main.c](2-examples/15/main.c) |
 
-## `3-domain/` (1–2)
+## `3-domain/` (1–10)
 
 | # | Path |
 |---|------|
 | 1 | [1/main.c](3-domain/1/main.c) |
 | 2 | [2/main.c](3-domain/2/main.c) |
+| 3 | [3/main.c](3-domain/3/main.c) |
+| 4 | [4/main.c](3-domain/4/main.c) |
+| 5 | [5/main.c](3-domain/5/main.c) |
+| 6 | [6/main.c](3-domain/6/main.c) |
+| 7 | [7/main.c](3-domain/7/main.c) |
+| 8 | [8/main.c](3-domain/8/main.c) |
+| 9 | [9/main.c](3-domain/9/main.c) |
+| 10 | [10/main.c](3-domain/10/main.c) |
 
 ## `4-algorithm/sequential/`
 
@@ -59,6 +67,14 @@ gcc 1-swap-numbers.c -o swap && ./swap
 
 | Path |
 |------|
-| [main.c](6-cia/main.c) — CIA lab (account opening) |
+| [module.c](6-cia/module.c) — CIA lab module |
+| [combined.c](6-cia/combined.c) — CIA lab, combined program (bank account) |
+
+## `7-examples/`
+
+| # | Path |
+|---|------|
+| 2 | [2/main.c](7-examples/2/main.c) |
+| 3 | [3/main.c](7-examples/3/main.c) |
 
 [← Back to repo root](../README.md)
