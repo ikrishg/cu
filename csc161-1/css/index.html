@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobbit</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* CSS Comment */
+
+    body {
+      background-color: #7DBA6A;
+      padding: 2rem 1rem;
+      color: whitesmoke;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-bottom: 1px solid white;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: "PP Editorial New", serif;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Grouping selector: ol and ul share the same list styles */
+    ol,
+    ul {
+      list-style-type: lower-greek;
+      padding-left: 2rem;
+      list-style: inside;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    .creator-link {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    form {
+      margin: 1rem 0;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+
+    .carousel {
+      margin: 1rem 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 1rem;
+      width: max-content;
+      animation: carousel-scroll 20s linear infinite;
+    }
+
+    .carousel-track img {
+      flex: 0 0 auto;
+    }
+
+    @keyframes carousel-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 0.5rem));
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .carousel-track {
+        animation: none;
+      }
+    }
+
+    marquee {
+      font-family: "PP Editorial New", serif;
+      font-size: 20rem;
+      rotate: -45deg;
+      position: fixed;
+      left: 50%;
+      top: 0%;
+      transform: translate(-50%, -50%);
+      width: hypot(100vw, 100vh);
+      z-index: -1;
+      opacity: 0.1;
+      overflow: visible;
+    }
+
+    nav div {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div></div>
+    <a href="#modules">Modules</a>
+    <a href="#idea">Idea</a>
+    <a href="#plan-of-action">Plan of Action</a>
+    <a href="#about-the-creator">About the Creator</a>
+    <a href="#leave-a-message">Leave a message!</a>
+  </nav>
+  <h1 style="text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);">Hobbit</h1>
+  <marquee>KRISH GUPTA</marquee>
+  <h3 id="idea">Idea</h3>
+  <p class="section-text">Hobbit is a social media platform designed to extinguish larpers in the age of AI. This
+    platform focuses on consumption of authentic content. The most important way for a human being to enlight the flames
+    that burn within their passionate hearts is through consumption of media, culture and engagement with the real
+    world.</p>
+  <h3 id="modules">Modules</h3>
+  <ol>
+    <li>Feed</li>
+    <li>Profile Page</li>
+    <li>Activity Overview Page</li>
+    <li>Activity Statistics</li>
+    <li>Activity Type Display Page</li>
+    <li>Activity Blend Page</li>
+    <li>Following Feed</li>
+    <li>Chats</li>
+  </ol>
+  <h3 id="plan-of-action">Plan of Action</h3>
+  <p class="section-text">The plan of action for Hobbit involves several key steps:</p>
+  <ul>
+    <li>A platform where you log the movies, tv shows, books, music, and other media you consume.</li>
+    <li>A platform where you can see what your friends are consuming and what they think about it.</li>
+    <li>A platform where you can post about your happenings in the real world (e.g., going to a concert, hiking,
+      traveling, etc.) and see what your friends are doing in the real world.</li>
+  </ul>
+  <h3 id="about-the-creator">About the Creator</h3>
+  <p class="section-text">Hi, I'm Krish Gupta. I am an introvert. I write poetry. I have a website at <a
+      href="https://krishg.com" target="_blank" class="creator-link">krishg.com</a>.</p>
+  <div class="carousel" aria-label="Infinite image carousel">
+    <div class="carousel-track">
+      <img src="../assets/gallery-1.webp" alt="Gallery image 1">
+      <img src="../assets/gallery-2.webp" alt="Gallery image 2">
+      <img src="../assets/gallery-3.webp" alt="Gallery image 3">
+      <img src="../assets/gallery-4.webp" alt="Gallery image 4">
+      <img src="../assets/gallery-5.webp" alt="Gallery image 5">
+
+      <img src="../assets/gallery-1.webp" alt="Gallery image 1 duplicate">
+      <img src="../assets/gallery-2.webp" alt="Gallery image 2 duplicate">
+      <img src="../assets/gallery-3.webp" alt="Gallery image 3 duplicate">
+      <img src="../assets/gallery-4.webp" alt="Gallery image 4 duplicate">
+      <img src="../assets/gallery-5.webp" alt="Gallery image 5 duplicate">
+    </div>
+  </div>
+  <h3 id="leave-a-message">Leave a message!</h3>
+  <form style="background-color: rgba(0, 0, 0, 0.1); padding: 1rem; border-radius: 0.5rem;">
+    <label class="form-field" for="name">Name</label>
+    <input id="name" name="name" type="text" required /> <br />
+    <label>Favorite Media</label><br />
+    <label><input type="radio" name="favorite-media" value="movies" /> Movies</label><br />
+    <label><input type="radio" name="favorite-media" value="tv" /> TV Shows</label><br />
+    <label><input type="radio" name="favorite-media" value="books" /> Books</label><br />
+    <label><input type="radio" name="favorite-media" value="music" /> Music</label><br />
+    <label><input type="checkbox" name="updates" /> Send me updates</label><br />
+    <label for="mood">Current Mood</label>
+    <select id="mood" name="mood">
+      <option value="">Choose one</option>
+      <option value="happy">Happy</option>
+      <option value="curious">Curious</option>
+      <option value="tired">Tired</option>
+      <option value="hungry">Hungry</option>
+    </select><br />
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    <br />
+    <button type="submit" style="margin-right: 0.5rem; cursor: pointer;">Submit</button>
+    <button type="reset" style="cursor: pointer;">Reset</button>
+  </form>
+  <p id="site-footer">
+    Copyright © 2026 Krish Gupta. All rights reserved.
+  </p>
+</body>
+
+</html>
