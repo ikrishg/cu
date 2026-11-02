@@ -9,6 +9,7 @@ a.out
 
 # Editor / IDE
 .cursor/
+.impeccable/
 .vscode/
 .idea/
 *.swp
