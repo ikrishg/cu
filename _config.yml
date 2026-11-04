@@ -1,0 +1,14 @@
+# GitHub Pages (Jekyll) — match the live Primer layout and project-site base path.
+title: cu
+description: CHRIST University Archive
+url: https://ikrishg.github.io
+baseurl: /cu
+theme: jekyll-theme-primer
+
+# Keep coursework binaries; do not override Jekyll's default exclude list.
+include:
+  - "*.pdf"
+  - "*.docx"
+  - "*.xlsx"
+  - "*.webp"
+  - "*.excalidraw"
