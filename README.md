@@ -15,4 +15,5 @@ Coursework and lab submissions from my time at **CHRIST University**.
 
 | Course | What |
 |--------|------|
+| [csc201-2/](csc201-2/) | Data Structures |
 | [csc202-2/](csc202-2/) | Operating Systems |
