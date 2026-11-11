@@ -17,5 +17,6 @@ Coursework and lab submissions from my time at **CHRIST University**.
 |--------|------|
 | [csc201-2/](csc201-2/) | Data Structures |
 | [csc202-2/](csc202-2/) | Operating Systems |
+| [csc261-2/](csc261-2/) | Python Programming |
 
 Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
